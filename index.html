@@ -8,32 +8,69 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <div class="container mt-5">
-      <h1 class="text-center">Undakusuk Basa Sunda</h1>
-      <div class="mb-3">
-        <label for="slugInput" class="form-label"
-          >Cari kata dalam bahasa Sunda, Indonesia, atau Inggris</label
-        >
-        <input
-          type="text"
-          id="slugInput"
-          class="form-control"
-          placeholder="Contoh: abdi"
-        />
-      </div>
-      <button class="btn btn-primary" onclick="getData()">
-        Tampilkan Data
-      </button>
+      <div class="row">
+        <!-- Konten Utama -->
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-body">
+              <h1 class="text-center">Undakusuk Basa Sunda</h1>
+              <div class="mb-3 mt-5">
+                <label for="slugInput" class="form-label">
+                  Cari kata dalam bahasa Sunda, Indonesia, atau Inggris
+                </label>
+                <input
+                  type="text"
+                  id="slugInput"
+                  class="form-control"
+                  placeholder="Contoh: abdi"
+                />
+              </div>
+              <button class="btn btn-primary" onclick="getData()">
+                Tampilkan Data
+              </button>
 
-      <div class="mt-5" id="result">
-        <!-- Data dari API akan ditampilkan di sini -->
+              <div class="mt-5" id="result">
+                <!-- Data dari API akan ditampilkan di sini -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Biodata -->
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body text-center">
+              <img
+                src="https://via.placeholder.com/150"
+                style="border-radius: 50%"
+                alt="Foto Profil"
+              />
+              <h3 class="mt-4">Apep Wahyudin</h3>
+              <i class="fa-brands fa-instagram"></i>
+              <a href="https://instagram.com/sebuahsemangat" target="_blank"
+                >Instagram</a
+              >
+              <i class="fa-brands fa-github"></i>
+              <a href="https://github.com/sebuahsemangat" target="_blank"
+                >GitHub</a
+              >
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <script src="script.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

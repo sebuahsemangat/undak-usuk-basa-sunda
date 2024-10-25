@@ -1,68 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Undakusuk Basa Sunda</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="container mt-5">
-        <h1 class="text-center">Undakusuk Basa Sunda</h1>
-        <div class="mb-3">
-            <label for="slugInput" class="form-label">Cari kata dalam bahasa Sunda, Indonesia, atau Inggris</label>
-            <input type="text" id="slugInput" class="form-control" placeholder="Contoh: abdi">
-        </div>
-        <button class="btn btn-primary" onclick="getData()">Tampilkan Data</button>
-        
-        <div class="mt-5" id="result">
-            <!-- Data dari API akan ditampilkan di sini -->
-        </div>
+      <h1 class="text-center">Undakusuk Basa Sunda</h1>
+      <div class="mb-3">
+        <label for="slugInput" class="form-label"
+          >Cari kata dalam bahasa Sunda, Indonesia, atau Inggris</label
+        >
+        <input
+          type="text"
+          id="slugInput"
+          class="form-control"
+          placeholder="Contoh: abdi"
+        />
+      </div>
+      <button class="btn btn-primary" onclick="getData()">
+        Tampilkan Data
+      </button>
+
+      <div class="mt-5" id="result">
+        <!-- Data dari API akan ditampilkan di sini -->
+      </div>
     </div>
 
-    <script>
-        // Menambahkan event listener pada input untuk menangani tombol Enter
-        document.getElementById('slugInput').addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                getData(); // Panggil fungsi pencarian data ketika Enter ditekan
-            }
-        });
-        async function getData() {
-            const slug = document.getElementById('slugInput').value;
-            const url = `https://hibersunda.onrender.com/undakusukbasa/${slug}`;
-
-            try {
-                const response = await fetch(url);
-                const data = await response.json();
-
-                if (data.length > 0) {
-                    displayData(data[0]);
-                } else {
-                    document.getElementById('result').innerHTML = `<p class="text-danger">Data tidak ditemukan.</p>`;
-                }
-            } catch (error) {
-                console.error('Error fetching data:', error);
-                document.getElementById('result').innerHTML = `<p class="text-danger">Terjadi kesalahan saat mengambil data.</p>`;
-            }
-        }
-
-        function displayData(data) {
-            const resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = `
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Hasil Pencarian</h5>
-                        <p class="card-text"><strong>Sorangan:</strong> ${data.sorangan}</p>
-                        <p class="card-text"><strong>Batur:</strong> ${data.batur}</p>
-                        <p class="card-text"><strong>Loma:</strong> ${data.loma}</p>
-                        <p class="card-text"><strong>Bahasa Indonesia:</strong> ${data.bindo}</p>
-                        <p class="card-text"><strong>Bahasa Inggris:</strong> ${data.english}</p>
-                    </div>
-                </div>
-            `;
-        }
-    </script>
+    <script src="script.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>

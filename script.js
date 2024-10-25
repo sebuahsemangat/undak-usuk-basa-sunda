@@ -19,13 +19,13 @@ try {
   } else {
     document.getElementById(
       "result"
-    ).innerHTML = `<p class="text-danger">Data tidak ditemukan.</p>`;
+    ).innerHTML = `<p class="alert alert-danger">Data tidak ditemukan.</p>`;
   }
 } catch (error) {
   console.error("Error fetching data:", error);
   document.getElementById(
     "result"
-  ).innerHTML = `<p class="text-danger">Terjadi kesalahan saat mengambil data.</p>`;
+  ).innerHTML = `<p class="alert alert-danger">Terjadi kesalahan saat mengambil data.</p>`;
 }
 }
 
